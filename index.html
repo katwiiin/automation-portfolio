@@ -6,21 +6,21 @@
   <title>Kathryn Gale Mariano | Automation Specialist Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fff8fb;
-      --bg-soft: #fff1f8;
-      --card: rgba(255,255,255,0.75);
+      --bg: #fbf8ff;
       --text: #231942;
-      --muted: #5e548e;
-      --primary: #ff4fa3;
-      --secondary: #7b61ff;
-      --accent: #14c7b7;
-      --gold: #ffb703;
-      --border: rgba(123, 97, 255, 0.14);
-      --shadow: 0 18px 45px rgba(73, 37, 122, 0.12);
-      --radius: 26px;
+      --muted: #665d86;
+      --pink: #ff7db7;
+      --purple: #7c5cff;
+      --blue: #79b8ff;
+      --mint: #63d8c5;
+      --gold: #ffca6b;
+      --white: rgba(255,255,255,0.84);
+      --border: rgba(124,92,255,0.12);
+      --shadow: 0 18px 45px rgba(89, 64, 160, 0.12);
+      --radius: 28px;
       --max: 1180px;
     }
 
@@ -31,14 +31,11 @@
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255,79,163,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(123,97,255,0.18), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(20,199,183,0.14), transparent 24%),
-        linear-gradient(180deg, #fff8fb 0%, #fff 55%, #fffaf1 100%);
+        radial-gradient(circle at top left, rgba(255,125,183,0.22), transparent 22%),
+        radial-gradient(circle at top right, rgba(121,184,255,0.26), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(99,216,197,0.18), transparent 22%),
+        linear-gradient(180deg, #fcf8ff 0%, #ffffff 46%, #faf8ff 100%);
     }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -48,48 +45,53 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.75);
-      border-bottom: 1px solid rgba(123,97,255,0.08);
+      z-index: 20;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(124,92,255,0.08);
     }
 
     .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 78px;
       gap: 18px;
     }
 
     .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 1.05rem;
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
     }
 
     .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
-      color: white;
-      box-shadow: 0 10px 24px rgba(123,97,255,0.28);
-      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      box-shadow: 0 12px 26px rgba(124,92,255,0.25);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-weight: 600;
+      gap: 20px;
       flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.96rem;
     }
 
     .btn {
@@ -99,432 +101,444 @@
       gap: 10px;
       padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease;
     }
+
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      box-shadow: 0 14px 30px rgba(123,97,255,0.24);
+      background: linear-gradient(135deg, #6e56ff, #5534d4);
+      box-shadow: 0 16px 34px rgba(92, 72, 215, 0.28);
     }
 
-    .btn-primary:hover { transform: translateY(-2px); }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.7);
+    .btn-light {
       color: var(--text);
-      border-color: rgba(123,97,255,0.14);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
     .hero {
-      padding: 72px 0 40px;
+      position: relative;
+      overflow: hidden;
+      padding: 44px 0 24px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 560px;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(255,125,183,0.34), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(121,184,255,0.32), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.9) 8%, rgba(231,223,255,0.95) 44%, rgba(212,235,255,0.96) 100%);
+      z-index: -2;
+    }
+
+    .hero-wave {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 170px;
+      background: #fff;
+      border-top-left-radius: 48% 100%;
+      border-top-right-radius: 48% 100%;
+      z-index: -1;
+      transform: translateY(68px);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 34px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
       align-items: center;
+      padding-top: 24px;
+      min-height: 520px;
     }
 
     .eyebrow {
       display: inline-flex;
-      gap: 10px;
       align-items: center;
-      padding: 9px 14px;
+      gap: 8px;
+      padding: 10px 15px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(123,97,255,0.12);
-      color: var(--secondary);
-      font-size: 0.92rem;
-      font-weight: 700;
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--purple);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(124,92,255,0.12);
       box-shadow: var(--shadow);
     }
 
     .hero h1 {
-      margin: 18px 0 14px;
+      margin: 16px 0 14px;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.65rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.5rem, 5vw, 4.35rem);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      background: linear-gradient(135deg, var(--pink), var(--purple), var(--blue));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .hero p {
-      font-size: 1.08rem;
-      line-height: 1.85;
       color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.82;
       max-width: 700px;
-      margin: 0 0 28px;
+      margin: 0 0 26px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .mini-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
-      max-width: 720px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .stat strong {
-      display: block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
     .hero-card {
       position: relative;
-      padding: 24px;
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.65));
-      border: 1px solid rgba(123,97,255,0.13);
-      box-shadow: 0 25px 60px rgba(103, 58, 183, 0.16);
+      padding: 22px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(124,92,255,0.12);
+      box-shadow: 0 26px 60px rgba(112, 91, 195, 0.15);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .mock-window {
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,246,255,0.9));
+      border: 1px solid rgba(124,92,255,0.12);
       overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -30px -30px auto;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(255,79,163,0.22), transparent 60%);
-      border-radius: 50%;
-    }
-
-    .card-label {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, var(--accent), var(--secondary));
-      margin-bottom: 16px;
-    }
-
-    .workflow {
-      display: grid;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .workflow-step {
+    .mock-top {
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(123,97,255,0.11);
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(124,92,255,0.08);
+      background: rgba(245,243,255,0.88);
     }
 
-    .step-icon {
-      min-width: 40px;
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.pink { background: #ff7db7; }
+    .dot.purple { background: #7c5cff; }
+    .dot.blue { background: #79b8ff; }
+
+    .flow-grid {
       display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: white;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 16px;
     }
 
-    .section {
-      padding: 34px 0 24px;
+    .flow-box {
+      padding: 14px;
+      border-radius: 18px;
+      font-size: .9rem;
+      line-height: 1.5;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(124,92,255,0.11);
+      min-height: 88px;
     }
+
+    .flow-box strong { display: block; margin-bottom: 6px; font-size: 0.96rem; }
+
+    .flow-box.full { grid-column: 1 / -1; }
+
+    .section { padding: 58px 0 18px; }
 
     .section-header {
       max-width: 760px;
-      margin-bottom: 26px;
+      text-align: center;
+      margin: 0 auto 28px;
     }
 
     .kicker {
-      color: var(--secondary);
+      color: var(--purple);
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.8rem;
+      letter-spacing: .22em;
+      font-size: .78rem;
       font-weight: 800;
       margin-bottom: 10px;
     }
 
     .section h2 {
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      line-height: 1.15;
+      font-size: clamp(1.9rem, 3vw, 2.9rem);
+      line-height: 1.12;
     }
 
     .section-header p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1rem;
       margin: 0;
+      color: var(--muted);
+      line-height: 1.84;
     }
 
-    .grid-3 {
+    .cards-4, .cards-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
+    .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
     .card {
-      background: var(--card);
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(14px);
     }
 
-    .card-icon {
-      width: 56px;
-      height: 56px;
+    .service-logo {
+      width: 64px;
+      height: 64px;
       border-radius: 18px;
       display: grid;
       place-items: center;
-      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(255,79,163,0.14), rgba(123,97,255,0.14));
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
     }
+
+    .service-logo.green { background: linear-gradient(135deg, #71d787, #40b96e); }
+    .service-logo.orange { background: linear-gradient(135deg, #ffb26b, #ff7a59); }
+    .service-logo.purple { background: linear-gradient(135deg, #b084ff, #7c5cff); }
+    .service-logo.blue { background: linear-gradient(135deg, #79b8ff, #5a8df5); }
 
     .card h3 {
       margin: 0 0 12px;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.28rem;
+      font-size: 1.25rem;
+      line-height: 1.22;
     }
 
     .card p, .card li {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    .expertise-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .expertise-item {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(124,92,255,0.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: .94rem;
+    }
+
+    .case-card { overflow: hidden; }
+
+    .case-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--purple);
+      background: rgba(124,92,255,0.08);
+    }
+
+    .sample-shot {
+      height: 185px;
+      border-radius: 22px;
+      margin: 16px 0 16px;
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff, #f7f3ff);
+      border: 1px solid rgba(124,92,255,0.1);
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .sample-shot.crm::before,
+    .sample-shot.onboarding::before,
+    .sample-shot.content::before,
+    .sample-shot.exec::before,
+    .sample-shot.reports::before,
+    .sample-shot.design::before {
+      content: "";
+      display: block;
+      height: 22px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(255,125,183,0.65), rgba(124,92,255,0.45));
+      width: 56%;
+      margin-bottom: 4px;
+    }
+
+    .ui-row {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .ui-card {
+      min-height: 52px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(124,92,255,0.1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .ui-line {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,92,255,0.18), rgba(121,184,255,0.22));
+    }
+
+    .ui-line.small { width: 48%; }
+    .ui-line.med { width: 72%; }
+    .ui-line.long { width: 100%; }
+
+    .bullet-list {
+      padding-left: 20px;
+      margin: 0;
       color: var(--muted);
       line-height: 1.8;
-      margin: 0;
     }
 
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .case-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .case-top {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .pill {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: rgba(123,97,255,0.1);
-      color: var(--secondary);
-    }
-
-    .result-box {
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(20,199,183,0.1), rgba(255,183,3,0.11));
-      border: 1px dashed rgba(20,199,183,0.28);
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
+    .timeline { display: grid; gap: 18px; }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 18px;
-      align-items: start;
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.72);
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      background: rgba(255,255,255,0.78);
       border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
       box-shadow: var(--shadow);
     }
 
     .timeline-date {
       font-weight: 800;
-      color: var(--secondary);
-      font-size: 0.95rem;
+      color: var(--purple);
+      font-size: .95rem;
     }
 
     .timeline-item h3 {
       margin: 0 0 8px;
       font-family: 'Poppins', sans-serif;
+      font-size: 1.24rem;
     }
 
-    .timeline-item ul {
-      padding-left: 18px;
-      margin: 12px 0 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+    .timeline-item p { margin: 0; color: var(--muted); line-height: 1.8; }
+    .timeline-item ul { padding-left: 18px; margin: 12px 0 0; color: var(--muted); line-height: 1.8; }
 
-    .split {
+    .tools-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .tool-tile {
+      padding: 24px 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .tool-tile small {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: .84rem;
+      font-weight: 600;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
       gap: 22px;
     }
 
-    .tools-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .tool-chip {
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-
-    .about-card {
-      background: linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,241,248,0.8));
-    }
-
     .contact-box {
-      padding: 30px;
+      padding: 32px;
       border-radius: 32px;
-      background: linear-gradient(135deg, #231942 0%, #5e548e 45%, #7b61ff 100%);
+      background: linear-gradient(135deg, #2a1753 0%, #5f49cd 48%, #76b7ff 100%);
       color: #fff;
-      box-shadow: 0 28px 60px rgba(59, 26, 113, 0.28);
+      box-shadow: 0 28px 60px rgba(61, 38, 128, 0.3);
     }
 
     .contact-box p {
       color: rgba(255,255,255,0.88);
       line-height: 1.8;
+      margin: 0;
     }
 
-    .contact-list {
-      display: grid;
-      gap: 14px;
-      margin: 22px 0 0;
-    }
+    .contact-list { display: grid; gap: 14px; margin-top: 20px; }
 
     .contact-item {
-      padding: 14px 16px;
+      padding: 15px 16px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.16);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .footer {
-      padding: 32px 0 50px;
-      color: var(--muted);
+      padding: 34px 0 44px;
       text-align: center;
-      font-size: 0.95rem;
+      color: var(--muted);
+      font-size: .94rem;
     }
 
-    .highlight-line {
-      display: inline-block;
-      position: relative;
+    @media (max-width: 1050px) {
+      .hero-grid, .cards-4, .cards-3, .proof-grid, .tools-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    .highlight-line::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 3px;
-      width: 100%;
-      height: 14px;
-      background: rgba(255,183,3,0.35);
-      z-index: -1;
-      border-radius: 20px;
-    }
-
-    @media (max-width: 1000px) {
-      .hero-grid,
-      .grid-3,
-      .case-grid,
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .hero {
-        padding-top: 42px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .card,
-      .timeline-item,
-      .contact-box,
-      .hero-card {
-        padding: 20px;
-      }
+    @media (max-width: 860px) {
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .hero-grid, .cards-4, .cards-3, .proof-grid, .tools-grid, .expertise-list { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .hero { padding-top: 28px; }
+      .hero h1 { font-size: 2.45rem; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#home" class="brand">
+      <a class="brand" href="#home">
         <span class="brand-badge">KG</span>
         <span>Kathryn Gale Mariano</span>
       </a>
@@ -533,7 +547,7 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#experience">Experience</a>
         <a href="#tools">Tools</a>
-        <a href="#contact" class="btn btn-primary">Work With Me</a>
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
       </nav>
     </div>
   </header>
@@ -543,86 +557,83 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">✨ Automation Specialist • Executive Virtual Assistant • Operations Support</div>
-          <h1>
-            I help busy businesses <span class="gradient-text">save time, streamline workflows,</span> and run smoother every day.
-          </h1>
+          <h1>Helping businesses <span class="gradient-text">save time, streamline workflows,</span> and operate more smoothly.</h1>
           <p>
-            I build practical systems for client onboarding, CRM management, scheduling, reporting, content operations, and executive support. My goal is simple: reduce manual work, improve efficiency, and make your day-to-day operations easier and more organized.
+            I support founders, agencies, and service businesses through CRM automation, onboarding systems, executive assistance, content operations, and organized backend support. My work is built around efficiency, reliability, and making day-to-day business tasks easier to manage.
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Let’s Build Your System</a>
-            <a href="#portfolio" class="btn btn-secondary">View Portfolio Highlights</a>
-          </div>
-          <div class="mini-stats">
-            <div class="stat">
-              <strong>CRM & Automation</strong>
-              <span>Zapier, HubSpot, HoneyBook, Acuity, GoHighLevel, n8n</span>
-            </div>
-            <div class="stat">
-              <strong>Executive Support</strong>
-              <span>Email, calendar, travel, research, admin, bookkeeping</span>
-            </div>
-            <div class="stat">
-              <strong>Content Operations</strong>
-              <span>Scheduling, QA, reporting, graphic support, social media workflows</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+            <a href="#portfolio" class="btn btn-light">See My Work</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <span class="card-label">Featured Workflow Expertise</span>
-          <div class="workflow">
-            <div class="workflow-step">
-              <div class="step-icon">1</div>
-              <div>
-                <strong>Lead Capture & Booking</strong>
-                <p>Set up forms, scheduling tools, and contact creation flows that capture leads automatically.</p>
-              </div>
+          <h3>Sample Automation Workflow</h3>
+          <div class="mock-window">
+            <div class="mock-top">
+              <span class="dot pink"></span>
+              <span class="dot purple"></span>
+              <span class="dot blue"></span>
             </div>
-            <div class="workflow-step">
-              <div class="step-icon">2</div>
-              <div>
-                <strong>CRM & Onboarding Automation</strong>
-                <p>Create pipelines, task assignments, follow-ups, and onboarding workflows so nothing gets missed.</p>
+            <div class="flow-grid">
+              <div class="flow-box">
+                <strong>Lead Booking</strong>
+                Client books through Acuity and details are captured automatically.
               </div>
-            </div>
-            <div class="workflow-step">
-              <div class="step-icon">3</div>
-              <div>
-                <strong>Operations & Reporting</strong>
-                <p>Support your team with organized systems, ongoing admin help, content coordination, and clear reporting.</p>
+              <div class="flow-box">
+                <strong>CRM Creation</strong>
+                Contact, company, and deal are created inside HubSpot or HoneyBook.
+              </div>
+              <div class="flow-box full">
+                <strong>Task & Follow-Up Automation</strong>
+                Internal tasks, reminders, and status changes are triggered without manual work.
+              </div>
+              <div class="flow-box">
+                <strong>Team Handoff</strong>
+                Appointment confirmations, pipeline updates, and assignments stay organized.
+              </div>
+              <div class="flow-box">
+                <strong>Reporting</strong>
+                Revenue tracking and workflow visibility are easier to manage.
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="hero-wave"></div>
     </section>
 
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Services</div>
-          <h2>Support that combines <span class="highlight-line">automation, organization, and execution</span></h2>
-          <p>I help founders, agencies, and growing businesses simplify operations with reliable systems and hands-on virtual support.</p>
+          <div class="kicker">Automation Solutions I Provide</div>
+          <h2>Services designed to make your business easier to run</h2>
+          <p>I combine systems thinking, admin support, and hands-on execution to help businesses reduce manual work and stay organized.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="cards-4">
           <article class="card">
-            <div class="card-icon">⚙️</div>
-            <h3>CRM & Workflow Automation</h3>
-            <p>Design and implement automations for lead handling, onboarding, follow-ups, task creation, pipeline progression, and reporting dashboards.</p>
+            <div class="service-logo green">Zap</div>
+            <h3>CRM Automation</h3>
+            <p>Build streamlined workflows for leads, contacts, deals, follow-ups, and status updates using tools like Zapier and HubSpot.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">📅</div>
-            <h3>Executive Virtual Assistance</h3>
-            <p>Keep daily operations organized through inbox management, calendar coordination, meeting setup, travel planning, research, bookkeeping, and admin support.</p>
+            <div class="service-logo orange">Onb</div>
+            <h3>Client Onboarding Systems</h3>
+            <p>Organize the journey from booking to onboarding with automated forms, records, reminders, tasks, and smoother handoffs.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">📣</div>
-            <h3>Content & Social Media Operations</h3>
-            <p>Support content planning, scheduling, QA, platform management, graphic design, reporting, and day-to-day social media coordination.</p>
+            <div class="service-logo purple">EVA</div>
+            <h3>Executive Assistant Systems</h3>
+            <p>Support busy professionals with calendars, scheduling, inbox tasks, travel planning, meeting prep, research, and admin coordination.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-logo blue">Ops</div>
+            <h3>Content Operations</h3>
+            <p>Support content calendars, social scheduling, quality checks, reporting, asset prep, and smoother day-to-day publishing workflows.</p>
           </article>
         </div>
       </div>
@@ -632,27 +643,45 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Expertise</div>
-          <h2>What clients can hire me for right away</h2>
-          <p>These are the practical business functions I can step into and improve based on my resume and experience.</p>
+          <h2>What clients can hire me for</h2>
+          <p>These are the kinds of tasks and capabilities businesses usually want to see before hiring an automation specialist or executive virtual assistant.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="cards-3">
           <article class="card">
-            <div class="card-icon">🧩</div>
-            <h3>Automation Setup</h3>
-            <p>Workflow mapping, CRM setup, booking automation, task automation, lead routing, contact creation, pipeline organization, and dashboard support.</p>
+            <h3>Automation & Systems</h3>
+            <div class="expertise-list">
+              <div class="expertise-item">Workflow mapping</div>
+              <div class="expertise-item">CRM setup</div>
+              <div class="expertise-item">Booking automation</div>
+              <div class="expertise-item">Task routing</div>
+              <div class="expertise-item">Lead capture</div>
+              <div class="expertise-item">Pipeline support</div>
+            </div>
           </article>
 
           <article class="card">
-            <div class="card-icon">🗂️</div>
-            <h3>Operations & Admin</h3>
-            <p>Email management, calendar management, meeting preparation, travel arrangements, research, diary planning, data entry, and bookkeeping support.</p>
+            <h3>Executive & Admin Support</h3>
+            <div class="expertise-list">
+              <div class="expertise-item">Calendar management</div>
+              <div class="expertise-item">Email handling</div>
+              <div class="expertise-item">Meeting setup</div>
+              <div class="expertise-item">Travel planning</div>
+              <div class="expertise-item">Research tasks</div>
+              <div class="expertise-item">Bookkeeping support</div>
+            </div>
           </article>
 
           <article class="card">
-            <div class="card-icon">🎨</div>
-            <h3>Creative & Content Support</h3>
-            <p>Content calendars, social media scheduling, quality checks, reporting, graphic design support, presentation optimization, and client-facing assets.</p>
+            <h3>Content & Creative Support</h3>
+            <div class="expertise-list">
+              <div class="expertise-item">Content calendars</div>
+              <div class="expertise-item">Post scheduling</div>
+              <div class="expertise-item">Quality auditing</div>
+              <div class="expertise-item">Presentation design</div>
+              <div class="expertise-item">Graphic support</div>
+              <div class="expertise-item">Analytics reporting</div>
+            </div>
           </article>
         </div>
       </div>
@@ -662,42 +691,97 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Portfolio Highlights</div>
-          <h2>Examples of the kind of systems and support I provide</h2>
-          <p>These portfolio highlights are based on the work and responsibilities shown in my resume, rewritten as service-focused project examples for potential clients.</p>
+          <h2>Sample work clients usually want to see before hiring</h2>
+          <p>These visual mockups represent the kinds of tasks, systems, and deliverables I handle based on my resume experience.</p>
         </div>
 
-        <div class="case-grid">
+        <div class="cards-3">
           <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">HubSpot</span>
-              <span class="pill">Zapier</span>
-              <span class="pill">CRM Automation</span>
+            <div class="case-tags">
+              <span class="tag">Zapier</span>
+              <span class="tag">HubSpot</span>
+              <span class="tag">CRM</span>
             </div>
-            <h3>Client Onboarding & Sales Pipeline System</h3>
-            <p>Built end-to-end CRM automation to support the onboarding journey and sales process. Included deal stage progression, follow-up task creation, pipeline management, and automated assignments.</p>
-            <div class="result-box">Designed to reduce manual admin work and create a smoother client journey.</div>
+            <h3>CRM Lead Automation</h3>
+            <p>Example of a workflow that captures leads from a form or booking system and turns them into organized CRM records with automatic follow-up tasks.</p>
+            <div class="sample-shot crm">
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line long"></div>
+              <div class="ui-line med"></div>
+              <div class="ui-line small"></div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+            </div>
+            <ul class="bullet-list">
+              <li>Lead capture from forms or booking links</li>
+              <li>Automated contact and deal creation</li>
+              <li>Reduced manual admin steps</li>
+            </ul>
           </article>
 
           <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">Acuity</span>
-              <span class="pill">HoneyBook</span>
-              <span class="pill">Zapier</span>
+            <div class="case-tags">
+              <span class="tag">Acuity</span>
+              <span class="tag">HoneyBook</span>
+              <span class="tag">Onboarding</span>
             </div>
-            <h3>Booking-to-CRM Automation Workflow</h3>
-            <p>Created workflows that turn bookings into organized client records, company entries, deals, and internal tasks, helping teams move faster from inquiry to onboarding.</p>
-            <div class="result-box">Designed for better lead handling, cleaner records, and a more organized backend.</div>
+            <h3>Client Onboarding Workflow</h3>
+            <p>Example of an onboarding system that moves a new client from inquiry to booking, intake, organized records, and internal action steps.</p>
+            <div class="sample-shot onboarding">
+              <div class="ui-line long"></div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line med"></div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+            </div>
+            <ul class="bullet-list">
+              <li>Automated scheduling and intake handling</li>
+              <li>Cleaner backend organization</li>
+              <li>Smoother client experience</li>
+            </ul>
           </article>
 
           <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">Content Ops</span>
-              <span class="pill">Scheduling</span>
-              <span class="pill">QA</span>
+            <div class="case-tags">
+              <span class="tag">Scheduling</span>
+              <span class="tag">QA</span>
+              <span class="tag">Content Ops</span>
             </div>
-            <h3>Content Operations & Quality Workflow</h3>
-            <p>Supported content strategy, creation, scheduling, quality assurance, analytics, and team coordination to help social media operations stay consistent and efficient.</p>
-            <div class="result-box">Ideal for businesses that need smoother content execution and better day-to-day coordination.</div>
+            <h3>Content Operations Workflow</h3>
+            <p>Example of the kind of content backend I can support for planning, post scheduling, quality checks, reporting, and team coordination.</p>
+            <div class="sample-shot content">
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line long"></div>
+              <div class="ui-line med"></div>
+            </div>
+            <ul class="bullet-list">
+              <li>Scheduled publishing workflow support</li>
+              <li>Asset preparation and organization</li>
+              <li>Reporting and quality checks</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -707,8 +791,8 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Experience</div>
-          <h2>A background built around systems, support, and business efficiency</h2>
-          <p>My experience covers automation, executive assistance, content operations, bookkeeping, research, scheduling, and business support across multiple client-facing roles.</p>
+          <h2>Professional experience that supports the services I offer</h2>
+          <p>These roles show the range of systems, tools, and support functions I’ve handled across automation, executive assistance, and social media operations.</p>
         </div>
 
         <div class="timeline">
@@ -716,12 +800,12 @@
             <div class="timeline-date">May 2024 – Present</div>
             <div>
               <h3>Executive Virtual Assistant / Automation Specialist — HFSCO</h3>
-              <p>Built end-to-end CRM automation using Acuity, HoneyBook, and Zapier while also providing executive support and admin operations.</p>
+              <p>Designed CRM automation using Acuity, HoneyBook, and Zapier while also supporting day-to-day executive operations.</p>
               <ul>
                 <li>Email and calendar management</li>
                 <li>Customer service and appointment setting</li>
-                <li>Research, bookkeeping, diary planning, and data entry</li>
-                <li>Graphic design and content calendar support</li>
+                <li>Research, data entry, bookkeeping, and diary planning</li>
+                <li>Graphic design and content calendar management</li>
               </ul>
             </div>
           </div>
@@ -730,12 +814,12 @@
             <div class="timeline-date">February 2026 · Project-Based</div>
             <div>
               <h3>CRM Automation Specialist — Fusion Advisors</h3>
-              <p>Designed automated sales and onboarding workflows using HubSpot and Zapier.</p>
+              <p>Built end-to-end HubSpot and Zapier workflows for sales pipeline management and onboarding automation.</p>
               <ul>
-                <li>Deal stage progression and pipeline management</li>
+                <li>Deal stage progression and follow-up task creation</li>
                 <li>Lead grading automation</li>
-                <li>Automated contact, company, and deal creation from bookings</li>
-                <li>Revenue tracking dashboards and automated task assignments</li>
+                <li>Contact, company, and deal creation from bookings</li>
+                <li>Revenue tracking dashboards and task assignments</li>
               </ul>
             </div>
           </div>
@@ -744,12 +828,12 @@
             <div class="timeline-date">Nov 2025 – Jan 2026 / Apr 2025 – Oct 2025</div>
             <div>
               <h3>Boost Assistant & Social Media Quality Auditor — RSF Agency</h3>
-              <p>Handled boost scheduling, image and caption preparation, quality assurance, content strategy support, analytics, and reporting.</p>
+              <p>Supported boosting schedules, content preparation, QA, reporting, and social media operations.</p>
               <ul>
-                <li>Prepared templates, captions, images, and tracking links</li>
-                <li>Confirmed publishing schedules and setup</li>
-                <li>Supported content creation, scheduling, and platform management</li>
-                <li>Worked on analytics, reporting, and team collaboration</li>
+                <li>Prepared captions, images, templates, and tracking links</li>
+                <li>Confirmed scheduling setup</li>
+                <li>Supported platform management and analytics</li>
+                <li>Worked with content creation and collaboration tasks</li>
               </ul>
             </div>
           </div>
@@ -758,12 +842,12 @@
             <div class="timeline-date">Apr 2023 – Jan 2024</div>
             <div>
               <h3>Executive Virtual Assistant — Harness.io</h3>
-              <p>Supported executive operations with meeting coordination, scheduling, travel support, presentation work, and administrative assistance.</p>
+              <p>Supported meetings, reminders, executive coordination, presentations, travel arrangements, and administrative work.</p>
               <ul>
-                <li>Scheduled meetings and reminders</li>
-                <li>Managed availability checks and setup</li>
-                <li>Handled travel and hotel arrangements</li>
-                <li>Created presentations and optimized PowerPoint decks</li>
+                <li>Scheduling and availability coordination</li>
+                <li>Hotel and travel support</li>
+                <li>Meeting minutes and administrative assistance</li>
+                <li>Presentation creation and optimization</li>
               </ul>
             </div>
           </div>
@@ -772,12 +856,12 @@
             <div class="timeline-date">Jan 2021 – Apr 2023 / Apr 2021 – Apr 2022</div>
             <div>
               <h3>Executive VA & Social Media Management — HFSCO / Kidzillafun.mtl</h3>
-              <p>Worked on email and calendar support, admin tasks, bookkeeping, social media posting, graphic design, website creation, and content planning.</p>
+              <p>Handled email support, calendar management, admin work, bookkeeping, social media posting, content planning, and website support.</p>
               <ul>
                 <li>Website creation and visual support</li>
-                <li>Content calendar management and posting</li>
+                <li>Content calendar management</li>
                 <li>Bookkeeping, research, and admin task support</li>
-                <li>Data curation, organization, and workflow assistance</li>
+                <li>Graphic design and data organization</li>
               </ul>
             </div>
           </div>
@@ -788,82 +872,105 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">What Hiring Clients Look For</div>
-          <h2>Proof of capability beyond a simple resume</h2>
-          <p>This section highlights the types of deliverables and responsibilities I can confidently handle for clients who need strong systems and dependable support.</p>
+          <div class="kicker">Sample Task Previews</div>
+          <h2>The kinds of outputs I can create inside your business</h2>
+          <p>These are portfolio-style previews that help hiring clients quickly understand the type of work I can support.</p>
         </div>
 
-        <div class="case-grid">
-          <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">Automation Deliverables</span>
+        <div class="cards-3">
+          <article class="card">
+            <h3>Executive Dashboard & Task Tracking</h3>
+            <div class="sample-shot exec">
+              <div class="ui-line long"></div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line med"></div>
+              <div class="ui-line small"></div>
             </div>
-            <h3>Backend Systems I Can Build</h3>
-            <p>CRM pipelines, lead capture workflows, onboarding automations, internal task routing, dashboard organization, and process support for service businesses.</p>
+            <p>Useful for organizing priorities, reminders, meeting tasks, and daily executive support workflows.</p>
           </article>
 
-          <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">Executive Support</span>
+          <article class="card">
+            <h3>Reports & Revenue Tracking Layout</h3>
+            <div class="sample-shot reports">
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line long"></div>
+              <div class="ui-line long"></div>
+              <div class="ui-line med"></div>
             </div>
-            <h3>Daily Operations I Can Manage</h3>
-            <p>Inbox handling, scheduling, meeting setup, reminders, travel planning, research, admin tasks, documentation, and cross-team coordination.</p>
+            <p>Useful for visualizing workflow status, performance snapshots, and revenue-related tracking support.</p>
           </article>
 
-          <article class="card case-card">
-            <div class="case-top">
-              <span class="pill">Content Operations</span>
+          <article class="card">
+            <h3>Content Calendar & Asset View</h3>
+            <div class="sample-shot design">
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-row">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+              <div class="ui-line med"></div>
             </div>
-            <h3>Content Workflows I Can Support</h3>
-            <p>Calendar planning, post scheduling, quality checking, asset preparation, reporting, and graphic support for consistent content execution.</p>
+            <p>Useful for clients who want help with planning posts, organizing assets, and maintaining consistent publishing systems.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section id="tools" class="section">
-      <div class="container split">
-        <div class="card about-card">
-          <div class="kicker">About Me</div>
-          <h2>Reliable support with a strong eye for process improvement</h2>
-          <p>I’m Kathryn Gale Mariano, an automation specialist and executive virtual assistant focused on helping clients work more efficiently. I bring a mix of no-code automation skills, executive support experience, content operations knowledge, and organizational discipline to every project.</p>
-          <p>My work is centered on convenience, productivity, and dependable service — whether that means building automations, organizing backend systems, managing schedules, or supporting business operations behind the scenes.</p>
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">My Automation Toolbox</div>
+          <h2>Tools and platforms I work with</h2>
+          <p>I use no-code and business operations tools that help automate, organize, and support business workflows.</p>
         </div>
 
-        <div class="card">
-          <div class="kicker">Tools & Platforms</div>
-          <h2>Platforms I work with</h2>
-          <div class="tools-wrap">
-            <span class="tool-chip">Zapier</span>
-            <span class="tool-chip">HubSpot</span>
-            <span class="tool-chip">HoneyBook</span>
-            <span class="tool-chip">Acuity</span>
-            <span class="tool-chip">GoHighLevel</span>
-            <span class="tool-chip">n8n</span>
-            <span class="tool-chip">ClickUp</span>
-            <span class="tool-chip">Trello</span>
-            <span class="tool-chip">Asana</span>
-            <span class="tool-chip">Slack</span>
-            <span class="tool-chip">Google Workspace</span>
-            <span class="tool-chip">Microsoft Office</span>
-            <span class="tool-chip">QuickBooks</span>
-            <span class="tool-chip">Xero</span>
-            <span class="tool-chip">Canva</span>
-            <span class="tool-chip">Illustrator</span>
-            <span class="tool-chip">Photoshop</span>
-            <span class="tool-chip">Wix</span>
-            <span class="tool-chip">Squarespace</span>
-          </div>
+        <div class="tools-grid">
+          <div class="tool-tile">Zapier<small>workflow automation</small></div>
+          <div class="tool-tile">HubSpot<small>CRM and pipeline support</small></div>
+          <div class="tool-tile">HoneyBook<small>client workflow support</small></div>
+          <div class="tool-tile">Acuity<small>booking automation</small></div>
+          <div class="tool-tile">GoHighLevel<small>business systems</small></div>
+          <div class="tool-tile">n8n<small>automation workflows</small></div>
+          <div class="tool-tile">ClickUp<small>task management</small></div>
+          <div class="tool-tile">Trello<small>project organization</small></div>
+          <div class="tool-tile">Asana<small>operations support</small></div>
+          <div class="tool-tile">Slack<small>team coordination</small></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="contact-box">
-          <div class="kicker" style="color:#ffd166;">Let’s Work Together</div>
-          <h2 style="margin-top:0; color:#fff;">Need help organizing your systems, automating workflows, or handling operations?</h2>
-          <p>I’m available to support business owners and teams who need a dependable automation specialist and executive assistant to help streamline their work.</p>
+    <section class="section">
+      <div class="container proof-grid">
+        <article class="card">
+          <div class="kicker">Why This Portfolio Works</div>
+          <h2>What potential clients usually want to see</h2>
+          <p>This site now shows the things that matter most in hiring:</p>
+          <ul class="bullet-list" style="margin-top:14px;">
+            <li>Clear services and expertise</li>
+            <li>Real experience summarized by role</li>
+            <li>Portfolio-style examples of your tasks and systems</li>
+            <li>Tools you already know how to use</li>
+            <li>A more polished design that feels professional</li>
+          </ul>
+        </article>
+
+        <div id="contact" class="contact-box">
+          <div class="kicker" style="color:#ffe48d;">Let’s Work Together</div>
+          <h2 style="margin:0 0 12px; font-family:'Poppins',sans-serif;">Need help with automation, executive support, or operations?</h2>
+          <p>I’m available to support businesses that need reliable systems, organized workflows, and dependable backend help.</p>
           <div class="contact-list">
             <div class="contact-item">📧 Email: kathgalemariano@gmail.com</div>
             <div class="contact-item">📱 Mobile / WhatsApp: +63 976 147 2624</div>
@@ -875,9 +982,7 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      Built as a colorful professional portfolio for Kathryn Gale Mariano — Automation Specialist & Executive Virtual Assistant.
-    </div>
+    <div class="container">Built as a colorful, client-focused portfolio for Kathryn Gale Mariano.</div>
   </footer>
 </body>
 </html>
