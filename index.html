@@ -496,7 +496,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#" onclick="openExperience()">Experience</a>
         <a href="#tools">Stack</a>
         <a href="#contact">Contact</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
@@ -592,9 +592,100 @@
           </svg>
         </div>
       </div>
+    </div>
+
+    <div id="experienceModal" class="experience-modal" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.85);backdrop-filter:blur(10px);z-index:9999;overflow:auto;padding:60px 20px;">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Experience</div>
+          <h2>Work Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2026 · Project-Based</div>
+            <div>
+              <h3>CRM Automation Specialist — Fusion Advisors</h3>
+              <ul>
+                <li>Built HubSpot CRM workflows and deal pipeline automation</li>
+                <li>Automated lead capture and deal creation from Acuity bookings</li>
+                <li>Implemented follow‑up tasks and pipeline progression triggers</li>
+                <li>Created revenue tracking dashboards and automation logic</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2025 – 2026</div>
+            <div>
+              <h3>Boost Assistant — RSF Agency</h3>
+              <ul>
+                <li>Prepared campaign boost templates and social publishing workflows</li>
+                <li>Organized captions, images, tracking links, and schedule setup</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <div>
+              <h3>PPV / Social Media Quality Auditor — RSF Agency</h3>
+              <ul>
+                <li>Audited content quality and ensured platform standards</li>
+                <li>Supported content scheduling, analytics, and reporting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 – Present</div>
+            <div>
+              <h3>Executive Virtual Assistant / Automation Specialist — HFSCO</h3>
+              <ul>
+                <li>Designed CRM onboarding workflows using Zapier and HoneyBook</li>
+                <li>Managed calendar, research, inbox, and operational tasks</li>
+                <li>Handled bookkeeping, scheduling, and content organization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 – 2024</div>
+            <div>
+              <h3>Executive Virtual Assistant — Harness.io</h3>
+              <ul>
+                <li>Managed executive calendars and travel arrangements</li>
+                <li>Prepared presentations, meeting notes, and reports</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2021 – 2023</div>
+            <div>
+              <h3>Executive Virtual Assistant — HFSCO</h3>
+              <ul>
+                <li>Email and calendar management</li>
+                <li>Research, bookkeeping, and administrative coordination</li>
+                <li>Content calendar management and social media posting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2021 – 2022</div>
+            <div>
+              <h3>Social Media Manager — Kidzillafun.mtl</h3>
+              <ul>
+                <li>Managed social media posting and visual content</li>
+                <li>Supported website updates and marketing assets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="tools" class="section">
+<section id="tools" class="section">
       <div class="container">
         <div class="section-header">
           <div class="kicker">Full Tools Stack</div>
@@ -690,5 +781,13 @@
       localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     });
   </script>
+<script>
+function openExperience(){
+  document.getElementById('experienceModal').style.display='block';
+}
+function closeExperience(){
+  document.getElementById('experienceModal').style.display='none';
+}
+</script>
 </body>
 </html>
