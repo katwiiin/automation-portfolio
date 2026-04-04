@@ -227,6 +227,7 @@
 
     .hero-panel {
       position: relative;
+      position: relative;
       padding: 22px;
       border-radius: 28px;
       background: linear-gradient(180deg, var(--surface-strong), var(--surface));
@@ -537,6 +538,11 @@
       .mini-stats { grid-template-columns: 1fr; }
     }
 
+    @keyframes floatPortrait {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
     @media (max-width: 820px) {
       .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
       .timeline-item { grid-template-columns: 1fr; }
@@ -595,6 +601,15 @@
         </div>
 
         <div class="hero-panel">
+          <div style="position:absolute;right:18px;bottom:12px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:3;">
+            <div style="position:relative;padding:6px;border-radius:28px;background:linear-gradient(135deg, rgba(124,58,237,0.95), rgba(6,182,212,0.95), rgba(79,70,229,0.95));box-shadow:0 18px 40px rgba(79,70,229,0.35), 0 0 0 8px rgba(255,255,255,0.04);animation:floatPortrait 5s ease-in-out infinite;">
+              <img src="profile.jpg" alt="Kathryn Gale Mariano" style="display:block;width:185px;height:185px;object-fit:cover;border-radius:22px;border:3px solid rgba(255,255,255,0.72);background:#0f172a;" />
+            </div>
+            <div style="padding:12px 16px;border-radius:18px;background:rgba(15,23,42,0.72);border:1px solid rgba(148,163,184,0.16);backdrop-filter:blur(14px);box-shadow:0 14px 30px rgba(2,6,23,0.28);text-align:center;min-width:220px;">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.02rem;color:#fff;">Kathryn Gale Mariano</div>
+              <div style="margin-top:4px;font-size:0.86rem;color:rgba(226,232,240,0.82);">Automation Specialist • Executive VA</div>
+            </div>
+          </div>
           <div class="code-card">
             <div class="code-head">
               <span class="dot red"></span>
