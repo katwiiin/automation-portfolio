@@ -3,27 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kathryn Gale Mariano | Automation Specialist Portfolio</title>
+  <title>Kathryn Gale Mariano | Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f5fb;
-      --surface: rgba(255,255,255,0.76);
-      --surface-strong: rgba(255,255,255,0.88);
-      --text: #221848;
-      --muted: #6a618f;
-      --pink: #f6bfd6;
-      --pink-strong: #d96aa1;
-      --purple: #7361ef;
-      --purple-deep: #4936ae;
-      --blue: #a8d5ff;
-      --mint: #d9f3ee;
-      --border: rgba(115, 97, 239, 0.08);
-      --shadow: 0 18px 40px rgba(96, 78, 173, 0.08);
-      --radius: 28px;
+      --bg: #f4f7fb;
+      --bg-soft: #edf2fb;
+      --surface: rgba(255,255,255,0.78);
+      --surface-strong: rgba(255,255,255,0.92);
+      --text: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #4f46e5;
+      --secondary: #0ea5e9;
+      --accent: #9333ea;
+      --glow: rgba(79, 70, 229, 0.18);
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
       --max: 1180px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --bg-soft: #0b172a;
+      --surface: rgba(13, 23, 42, 0.72);
+      --surface-strong: rgba(15, 23, 42, 0.88);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: rgba(148, 163, 184, 0.14);
+      --primary: #7c3aed;
+      --secondary: #06b6d4;
+      --accent: #2563eb;
+      --glow: rgba(124, 58, 237, 0.22);
+      --shadow: 0 20px 50px rgba(2, 6, 23, 0.4);
     }
 
     * { box-sizing: border-box; }
@@ -33,23 +47,23 @@
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(246,191,214,0.55), transparent 22%),
-        radial-gradient(circle at top right, rgba(168,213,255,0.55), transparent 28%),
-        linear-gradient(180deg, #fbf8ff 0%, #f7f5fb 60%, #f8f6fb 100%);
+        radial-gradient(circle at top left, rgba(79,70,229,0.12), transparent 22%),
+        radial-gradient(circle at top right, rgba(14,165,233,0.12), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(147,51,234,0.08), transparent 22%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      transition: background .35s ease, color .35s ease;
     }
 
-    .container {
-      width: min(var(--max), calc(100% - 34px));
-      margin: 0 auto;
-    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(251,248,255,0.72);
-      border-bottom: 1px solid rgba(115,97,239,0.06);
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--bg) 74%, transparent);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
@@ -64,21 +78,20 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--text);
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.02rem;
     }
 
-    .brand-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 15px;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, #9a79ff, #66a7ff);
-      box-shadow: 0 14px 30px rgba(115,97,239,0.22);
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 12px 28px var(--glow);
     }
 
     .nav-links {
@@ -89,515 +102,417 @@
     }
 
     .nav-links a {
+      font-weight: 600;
       color: var(--muted);
-      text-decoration: none;
-      font-weight: 700;
       font-size: 0.95rem;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 800;
-      transition: transform .2s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, #5662d7, #6231c7);
-      box-shadow: 0 16px 36px rgba(92,85,203,0.28);
-    }
-
-    .btn-light {
+    .theme-toggle {
+      border: 1px solid var(--line);
+      background: var(--surface);
       color: var(--text);
-      background: rgba(255,255,255,0.8);
-      border: 1px solid var(--border);
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      cursor: pointer;
       box-shadow: var(--shadow);
+      font-size: 1rem;
     }
 
     .hero {
+      padding: 76px 0 32px;
       position: relative;
       overflow: hidden;
-      padding: 40px 0 46px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 430px;
-      background:
-        radial-gradient(circle at 6% 10%, rgba(246,191,214,0.9), transparent 26%),
-        radial-gradient(circle at 82% 18%, rgba(168,213,255,0.9), transparent 30%),
-        linear-gradient(90deg, rgba(255,246,251,0.98) 0%, rgba(233,225,255,0.98) 52%, rgba(218,236,255,0.98) 100%);
-      z-index: -3;
-    }
-
-    .hero-wave {
-      position: absolute;
-      left: -4%;
-      right: -4%;
-      top: 255px;
-      height: 120px;
-      background: var(--bg);
-      border-top-left-radius: 46% 100%;
-      border-top-right-radius: 46% 100%;
-      z-index: -2;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-      min-height: 360px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
     }
-
-    .hero-copy { padding-top: 8px; }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
+      gap: 10px;
+      padding: 10px 14px;
       border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 800;
-      color: var(--purple);
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(115,97,239,0.09);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--surface);
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
 
     .hero h1 {
-      margin: 16px 0 12px;
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.35rem);
-      line-height: 1.03;
+      margin: 18px 0 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.01;
       letter-spacing: -0.05em;
-      max-width: 560px;
+      max-width: 760px;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #b04f95, #6e60dd, #69aef7);
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .hero p {
-      max-width: 520px;
-      margin: 0 0 22px;
-      color: #463b73;
-      font-size: 1.02rem;
-      line-height: 1.72;
+      max-width: 650px;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.05rem;
+      margin: 0 0 26px;
     }
 
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
 
-    .hero-art {
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 16px 34px var(--glow);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: var(--surface);
+      border-color: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.18rem;
+      margin-bottom: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .hero-panel {
       position: relative;
-      min-height: 300px;
-      padding-top: 6px;
-    }
-
-    .art-blob {
-      position: absolute;
-      inset: 18px 22px auto auto;
-      width: 92%;
-      height: 270px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .laptop {
-      position: absolute;
-      right: 18px;
-      top: 38px;
-      width: 420px;
-      max-width: 100%;
-      height: 220px;
-      border-radius: 22px 22px 16px 16px;
-      background: linear-gradient(180deg, #ffffff, #eef3ff);
-      border: 1px solid rgba(115,97,239,0.12);
-      box-shadow: 0 26px 50px rgba(94,82,179,0.16);
+      padding: 22px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 420px;
       overflow: hidden;
     }
 
-    .laptop::after {
+    .hero-panel::before {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: -14px;
-      transform: translateX(-50%);
-      width: 440px;
-      height: 22px;
-      border-radius: 0 0 22px 22px;
-      background: linear-gradient(180deg, #d6def7, #eff4ff);
-      box-shadow: 0 8px 20px rgba(90,90,130,0.08);
+      inset: auto -40px -40px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--glow), transparent 65%);
     }
 
-    .laptop-top {
-      height: 36px;
+    .code-card, .dash-card, .chip {
+      position: absolute;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .code-card {
+      left: 20px;
+      top: 28px;
+      width: 62%;
+      padding: 18px;
+    }
+
+    .code-head {
       display: flex;
-      align-items: center;
       gap: 8px;
-      padding: 0 14px;
-      background: rgba(244,247,255,0.95);
-      border-bottom: 1px solid rgba(115,97,239,0.07);
+      margin-bottom: 14px;
     }
 
     .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot.pink { background: #f39ac1; }
-    .dot.purple { background: #9079ff; }
-    .dot.blue { background: #7ec0ff; }
+    .dot.red { background: #fb7185; }
+    .dot.yellow { background: #fbbf24; }
+    .dot.green { background: #34d399; }
 
-    .screen {
-      position: relative;
-      padding: 16px;
-      height: calc(100% - 36px);
-      background: linear-gradient(180deg, #fbfcff, #f4f1ff);
-    }
-
-    .flow-tag {
-      position: absolute;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: #fff;
-      background: linear-gradient(135deg, #78c9ff, #6c73e7);
-      box-shadow: 0 10px 18px rgba(108,115,231,0.18);
-    }
-
-    .tag-one { left: 18px; top: 16px; }
-    .tag-two { right: 64px; top: 22px; background: linear-gradient(135deg, #ffd08c, #f0a165); }
-    .tag-three { left: 186px; top: 76px; background: linear-gradient(135deg, #c4a4ff, #7d69ef); }
-
-    .wire {
-      position: absolute;
-      border: 2px solid rgba(90, 125, 224, 0.48);
-      border-color: rgba(90,125,224,0.48) transparent transparent rgba(90,125,224,0.48);
-      border-radius: 18px 0 0 0;
-    }
-
-    .w1 { left: 80px; top: 44px; width: 120px; height: 52px; }
-    .w2 { left: 214px; top: 98px; width: 112px; height: 54px; transform: scaleX(-1); }
-
-    .pane {
-      position: absolute;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(115,97,239,0.09);
-      box-shadow: 0 14px 28px rgba(96,78,173,0.09);
-    }
-
-    .pane-main {
-      left: 108px;
-      top: 54px;
-      width: 164px;
-      height: 92px;
-      padding: 14px;
-    }
-
-    .pane-side {
-      right: 18px;
-      top: 70px;
-      width: 88px;
-      height: 104px;
-      padding: 12px;
-    }
-
-    .mini-line {
-      height: 9px;
+    .code-line {
+      height: 10px;
       border-radius: 99px;
-      background: linear-gradient(90deg, rgba(115,97,239,0.2), rgba(126,192,255,0.26));
       margin-bottom: 10px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 24%, transparent), color-mix(in srgb, var(--secondary) 18%, transparent));
     }
 
-    .mini-line.sm { width: 54%; }
-    .mini-line.md { width: 76%; }
-    .mini-line.lg { width: 100%; }
+    .code-line.sm { width: 42%; }
+    .code-line.md { width: 68%; }
+    .code-line.lg { width: 100%; }
 
-    .gear, .card-float {
-      position: absolute;
+    .dash-card {
+      right: 22px;
+      top: 88px;
+      width: 42%;
+      padding: 18px;
+    }
+
+    .dash-grid {
       display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(115,97,239,0.08);
-      box-shadow: 0 12px 24px rgba(96,78,173,0.09);
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    .gear {
-      right: -2px;
-      top: 18px;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      color: #f0b44a;
-      font-size: 1.1rem;
+    .dash-box {
+      height: 72px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--secondary) 12%, transparent), color-mix(in srgb, var(--primary) 6%, transparent));
+      border: 1px solid var(--line);
     }
 
-    .card-float {
-      left: 8px;
-      top: 122px;
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      color: #89a6ff;
-      font-size: 1.35rem;
+    .chip {
+      padding: 12px 14px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text);
     }
 
-    .section { padding: 46px 0 10px; }
+    .chip.one { left: 26px; bottom: 110px; }
+    .chip.two { right: 42px; bottom: 44px; }
+    .chip.three { left: 46%; top: 24px; }
+
+    .section { padding: 54px 0 8px; }
 
     .section-header {
-      max-width: 820px;
+      max-width: 760px;
+      margin: 0 auto 28px;
       text-align: center;
-      margin: 0 auto 26px;
     }
 
     .kicker {
-      color: var(--purple);
       text-transform: uppercase;
       letter-spacing: 0.22em;
       font-size: 0.78rem;
+      color: var(--primary);
       font-weight: 800;
       margin-bottom: 10px;
     }
 
     .section h2 {
       margin: 0 0 10px;
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      line-height: 1.12;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
     }
 
     .section-header p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.72;
-      font-size: 1rem;
+      line-height: 1.8;
     }
 
-    .cards-4, .cards-3 {
+    .grid-3, .grid-2, .tools-grid {
       display: grid;
       gap: 18px;
     }
-    .cards-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-    .cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .tools-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
     .card {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
 
-    .service-logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .service-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
+      margin-bottom: 16px;
       color: white;
       font-weight: 800;
-      font-size: 0.9rem;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .green { background: linear-gradient(135deg, #88cf67, #4caf50); }
-    .orange { background: linear-gradient(135deg, #ffb67f, #fb8d5b); }
-    .purple { background: linear-gradient(135deg, #c395ff, #8d68f2); }
-    .blue { background: linear-gradient(135deg, #8eb7ff, #5d93f8); }
-
-    .logo-pill {
-      padding: 10px 16px;
-      border-radius: 12px;
-      background: rgba(244,242,250,0.88);
-      color: #7d739c;
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 14px 26px var(--glow);
     }
 
     .card h3 {
       margin: 0 0 10px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.12rem;
-      line-height: 1.28;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
     }
 
     .card p, .card li {
       margin: 0;
-      color: #5e557f;
-      line-height: 1.7;
-      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.78;
     }
 
-    .case-tags {
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-top {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .tag {
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 10px;
+      padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.75);
-      font-size: 0.8rem;
+      background: color-mix(in srgb, var(--primary) 10%, transparent);
+      color: var(--primary);
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #64588c;
-      border: 1px solid rgba(115,97,239,0.06);
+      border: 1px solid var(--line);
     }
 
-    .sample-shot {
-      height: 162px;
-      border-radius: 16px;
-      margin: 14px 0 16px;
-      padding: 12px;
-      background: linear-gradient(180deg, #ffffff, #f4f2fb);
-      border: 1px solid rgba(115,97,239,0.07);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
-    }
-
-    .sample-shot.crm,
-    .sample-shot.onboarding,
-    .sample-shot.content,
-    .sample-shot.exec,
-    .sample-shot.reports,
-    .sample-shot.design {
+    .project-preview {
+      margin: 16px 0;
+      height: 180px;
+      border-radius: 20px;
+      padding: 14px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 100%, transparent), color-mix(in srgb, var(--surface) 100%, transparent));
+      border: 1px solid var(--line);
       display: grid;
-      gap: 8px;
+      gap: 10px;
       align-content: start;
     }
 
-    .ui-row {
+    .preview-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      gap: 10px;
     }
 
-    .ui-card {
-      min-height: 46px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(115,97,239,0.08);
+    .preview-box {
+      min-height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--secondary) 10%, transparent), color-mix(in srgb, var(--primary) 8%, transparent));
+      border: 1px solid var(--line);
     }
 
-    .ui-line {
-      height: 8px;
+    .preview-line {
+      height: 9px;
       border-radius: 99px;
-      background: linear-gradient(90deg, rgba(115,97,239,0.15), rgba(126,192,255,0.24));
+      background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 22%, transparent), color-mix(in srgb, var(--secondary) 20%, transparent));
     }
 
-    .ui-line.small { width: 45%; }
-    .ui-line.med { width: 70%; }
-    .ui-line.long { width: 100%; }
-
-    .bullet-list {
-      margin: 0;
-      padding-left: 18px;
-      color: #5e557f;
-      line-height: 1.7;
-    }
+    .preview-line.sm { width: 42%; }
+    .preview-line.md { width: 68%; }
+    .preview-line.lg { width: 100%; }
 
     .timeline { display: grid; gap: 16px; }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 190px 1fr;
+      grid-template-columns: 180px 1fr;
       gap: 20px;
-      padding: 22px;
+      padding: 24px;
       border-radius: 24px;
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
 
     .timeline-date {
+      color: var(--primary);
       font-weight: 800;
-      color: var(--purple);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
     }
 
     .timeline-item h3 {
       margin: 0 0 8px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.14rem;
-    }
-
-    .timeline-item p {
-      margin: 0;
-      color: #5e557f;
-      line-height: 1.72;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.18rem;
     }
 
     .timeline-item ul {
-      margin: 10px 0 0;
       padding-left: 18px;
-      color: #5e557f;
-      line-height: 1.72;
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.78;
     }
 
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 16px;
-    }
-
-    .tool-tile {
-      padding: 22px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+    .tool {
       text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.08rem;
+      padding: 22px 16px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
+      font-size: 1.06rem;
     }
 
-    .tool-tile small {
+    .tool small {
       display: block;
       margin-top: 8px;
-      color: var(--muted);
       font-family: 'Inter', sans-serif;
       font-size: 0.82rem;
+      color: var(--muted);
       font-weight: 600;
     }
 
     .contact-box {
       padding: 30px;
       border-radius: 28px;
-      background: linear-gradient(135deg, #2d1c60 0%, #5d4dc7 50%, #7cb8ff 100%);
-      color: #fff;
-      box-shadow: 0 30px 60px rgba(69,51,136,0.24);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 92%, black 8%), color-mix(in srgb, var(--secondary) 92%, black 8%));
+      color: white;
+      box-shadow: 0 24px 50px var(--glow);
     }
 
     .contact-box p {
       margin: 0;
+      line-height: 1.8;
       color: rgba(255,255,255,0.88);
-      line-height: 1.76;
     }
 
     .contact-list { display: grid; gap: 12px; margin-top: 18px; }
@@ -605,47 +520,47 @@
     .contact-item {
       padding: 14px 16px;
       border-radius: 16px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.15);
       font-weight: 700;
     }
 
     .footer {
-      padding: 34px 0 44px;
+      padding: 36px 0 44px;
       text-align: center;
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    @media (max-width: 1050px) {
-      .cards-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .cards-3 { grid-template-columns: 1fr; }
-      .tools-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (max-width: 1040px) {
+      .hero-grid, .grid-3, .grid-2, .tools-grid { grid-template-columns: 1fr; }
+      .mini-stats { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 820px) {
       .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
-      .hero-grid, .cards-4, .tools-grid { grid-template-columns: 1fr; }
       .timeline-item { grid-template-columns: 1fr; }
-      .hero::before { height: 500px; }
-      .hero-wave { top: 330px; }
-      .hero h1 { font-size: 2.45rem; }
+      .hero { padding-top: 46px; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero-panel { min-height: 380px; }
+      .dash-card { width: 48%; }
     }
   </style>
 </head>
-<body>
+<body class="dark">
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="#home">
-        <span class="brand-badge">KG</span>
+      <a href="#home" class="brand">
+        <span class="brand-mark">KG</span>
         <span>Kathryn Gale Mariano</span>
       </a>
       <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#tools">Tools</a>
-        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <a href="#tools">Stack</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
@@ -654,233 +569,159 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">✨ Automation Specialist • Executive Virtual Assistant • Operations Support</div>
-          <h1>Helping businesses <span class="gradient-text">save time, streamline workflows,</span> and operate more smoothly.</h1>
+          <div class="eyebrow">Developer Portfolio • Light + Dark Mode • Deep Color System</div>
+          <h1>Modern digital experiences with <span class="gradient-text">clean code, deep colors,</span> and polished UI.</h1>
           <p>
-            I support founders, agencies, and service businesses through CRM automation, onboarding systems, executive assistance, content operations, and organized backend support. My work is built around efficiency, reliability, and making day-to-day business tasks easier to manage.
+            I design and build portfolio websites, automation systems, dashboards, and client-facing digital experiences with a clean professional layout. This portfolio is crafted to feel modern, premium, and visually striking while still being easy to scan and trust.
           </p>
           <div class="hero-actions">
-            <a href="https://calendly.com/kathgalemariano/discoverycall" 
-   class="btn btn-primary" 
-   target="_blank">
-   Book a Free Consultation
-</a>
-            <a href="#portfolio" class="btn btn-light">See My Work</a>
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Hire Me</a>
+          </div>
+          <div class="mini-stats">
+            <div class="stat">
+              <strong>UI & UX</strong>
+              <span>Modern layouts, responsive sections, light and dark themes.</span>
+            </div>
+            <div class="stat">
+              <strong>Systems</strong>
+              <span>Automation flows, dashboards, CRM support, workflow thinking.</span>
+            </div>
+            <div class="stat">
+              <strong>Delivery</strong>
+              <span>Professional builds focused on clarity, trust, and conversions.</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero-art">
-          <div class="art-blob"></div>
-          <div class="laptop">
-            <div class="laptop-top">
-              <span class="dot pink"></span>
-              <span class="dot purple"></span>
-              <span class="dot blue"></span>
+        <div class="hero-panel">
+          <div class="code-card">
+            <div class="code-head">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
             </div>
-            <div class="screen">
-              <span class="flow-tag tag-one">CRM</span>
-              <span class="flow-tag tag-two">Task Setup</span>
-              <span class="flow-tag tag-three">Automation</span>
-              <div class="wire w1"></div>
-              <div class="wire w2"></div>
-              <div class="pane pane-main">
-                <div class="mini-line lg"></div>
-                <div class="mini-line md"></div>
-                <div class="mini-line sm"></div>
-              </div>
-              <div class="pane pane-side">
-                <div class="mini-line md"></div>
-                <div class="mini-line lg"></div>
-                <div class="mini-line sm"></div>
-              </div>
-              <div class="gear">⚙</div>
-              <div class="card-float">🗂</div>
+            <div class="code-line lg"></div>
+            <div class="code-line md"></div>
+            <div class="code-line lg"></div>
+            <div class="code-line sm"></div>
+            <div class="code-line md"></div>
+          </div>
+          <div class="dash-card">
+            <div class="preview-line lg"></div>
+            <div class="dash-grid">
+              <div class="dash-box"></div>
+              <div class="dash-box"></div>
+              <div class="dash-box"></div>
+              <div class="dash-box"></div>
             </div>
           </div>
+          <div class="chip one">Responsive Portfolio</div>
+          <div class="chip two">Deep Color Themes</div>
+          <div class="chip three">Interactive UI</div>
         </div>
       </div>
-      <div class="hero-wave"></div>
     </section>
 
-    <section id="services" class="section">
+    <section id="about" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Automation Solutions I Provide</div>
-          <h2>Services designed to make your business easier to run</h2>
-          <p>I combine systems thinking, admin support, and hands-on execution to help businesses reduce manual work and stay organized.</p>
+          <div class="kicker">About</div>
+          <h2>Clean presentation, strong visuals, and developer-focused positioning</h2>
+          <p>This portfolio is styled as a modern developer website: sharp typography, layered gradients, polished cards, responsive sections, and a built-in theme toggle for light and dark mode.</p>
         </div>
-
-        <div class="cards-4">
+        <div class="grid-3">
           <article class="card">
-            <div class="service-logo green">Zap</div>
-            <h3>CRM Automation</h3>
-            <p>Build streamlined workflows for leads, contacts, deals, follow-ups, and status updates using tools like Zapier and HubSpot.</p>
+            <div class="icon">UI</div>
+            <h3>Modern Interface Design</h3>
+            <p>Elegant spacing, visual depth, layered surfaces, and premium sections designed to feel current and professional.</p>
           </article>
-
           <article class="card">
-            <div class="service-logo orange">Onb</div>
-            <h3>Client Onboarding Systems</h3>
-            <p>Organize the journey from booking to onboarding with automated forms, records, reminders, tasks, and smoother handoffs.</p>
+            <div class="icon">DX</div>
+            <h3>Developer Presentation</h3>
+            <p>A layout that highlights projects, experience, stack, and contact details in the format clients expect from a developer portfolio.</p>
           </article>
-
           <article class="card">
-            <div class="service-logo purple">EVA</div>
-            <h3>Executive Assistant Systems</h3>
-            <p>Support busy professionals with calendars, scheduling, inbox tasks, travel planning, meeting prep, research, and admin coordination.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-logo blue">Ops</div>
-            <h3>Content Operations</h3>
-            <p>Support content calendars, social scheduling, quality checks, reporting, asset prep, and smoother day-to-day publishing workflows.</p>
+            <div class="icon">UX</div>
+            <h3>Light & Dark Mode</h3>
+            <p>Deep colors and clean contrast in both themes, creating a visually stunning experience across desktop and mobile.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Expertise</div>
-          <h2>What clients can hire me for</h2>
-          <p>These are the kinds of tasks and capabilities businesses usually want to see before hiring an automation specialist or executive virtual assistant.</p>
+          <div class="kicker">Featured Work</div>
+          <h2>Selected projects presented like a real developer portfolio</h2>
+          <p>These project blocks are styled to show structure, tools, visual previews, and short outcomes in a clear, high-end layout.</p>
         </div>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Automation & Systems</h3>
-            <div class="expertise-list">
-              <div class="expertise-item">Workflow mapping</div>
-              <div class="expertise-item">CRM setup</div>
-              <div class="expertise-item">Booking automation</div>
-              <div class="expertise-item">Task routing</div>
-              <div class="expertise-item">Lead capture</div>
-              <div class="expertise-item">Pipeline support</div>
+        <div class="grid-3">
+          <article class="card project-card">
+            <div class="project-top">
+              <span class="pill">Portfolio</span>
+              <span class="pill">UI Design</span>
+              <span class="pill">Responsive</span>
             </div>
+            <h3>Premium Personal Website</h3>
+            <p>A visually striking personal portfolio with strong typography, layered cards, and polished sections for credibility.</p>
+            <div class="project-preview">
+              <div class="preview-line lg"></div>
+              <div class="preview-row">
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+              </div>
+              <div class="preview-line md"></div>
+              <div class="preview-line sm"></div>
+            </div>
+            <p>Focus: presentation, trust, and a modern first impression.</p>
           </article>
 
-          <article class="card">
-            <h3>Executive & Admin Support</h3>
-            <div class="expertise-list">
-              <div class="expertise-item">Calendar management</div>
-              <div class="expertise-item">Email handling</div>
-              <div class="expertise-item">Meeting setup</div>
-              <div class="expertise-item">Travel planning</div>
-              <div class="expertise-item">Research tasks</div>
-              <div class="expertise-item">Bookkeeping support</div>
+          <article class="card project-card">
+            <div class="project-top">
+              <span class="pill">Dashboard</span>
+              <span class="pill">Analytics</span>
+              <span class="pill">Workflow</span>
             </div>
+            <h3>Operations Dashboard Concept</h3>
+            <p>A clean admin-style interface for tracking metrics, workflows, and internal status in a sleek card-based layout.</p>
+            <div class="project-preview">
+              <div class="preview-row">
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+              </div>
+              <div class="preview-line lg"></div>
+              <div class="preview-line lg"></div>
+              <div class="preview-line md"></div>
+            </div>
+            <p>Focus: data presentation, hierarchy, and usability.</p>
           </article>
 
-          <article class="card">
-            <h3>Content & Creative Support</h3>
-            <div class="expertise-list">
-              <div class="expertise-item">Content calendars</div>
-              <div class="expertise-item">Post scheduling</div>
-              <div class="expertise-item">Quality auditing</div>
-              <div class="expertise-item">Presentation design</div>
-              <div class="expertise-item">Graphic support</div>
-              <div class="expertise-item">Analytics reporting</div>
+          <article class="card project-card">
+            <div class="project-top">
+              <span class="pill">Automation</span>
+              <span class="pill">CRM</span>
+              <span class="pill">Systems</span>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Portfolio Highlights</div>
-          <h2>Sample work clients usually want to see before hiring</h2>
-          <p>These visual mockups represent the kinds of tasks, systems, and deliverables I handle based on my resume experience.</p>
-        </div>
-
-        <div class="cards-3">
-          <article class="card case-card">
-            <div class="case-tags">
-              <span class="tag">Zapier</span>
-              <span class="tag">HubSpot</span>
-              <span class="tag">CRM</span>
-            </div>
-            <h3>CRM Lead Automation</h3>
-            <p>Example of a workflow that captures leads from a form or booking system and turns them into organized CRM records with automatic follow-up tasks.</p>
-            <div class="sample-shot crm">
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
+            <h3>Automation Workflow Showcase</h3>
+            <p>A project section for showing lead routing, onboarding systems, internal tasks, and systemized client operations.</p>
+            <div class="project-preview">
+              <div class="preview-line lg"></div>
+              <div class="preview-row">
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
               </div>
-              <div class="ui-line long"></div>
-              <div class="ui-line med"></div>
-              <div class="ui-line small"></div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
+              <div class="preview-row">
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
+                <div class="preview-box"></div>
               </div>
             </div>
-            <ul class="bullet-list">
-              <li>Lead capture from forms or booking links</li>
-              <li>Automated contact and deal creation</li>
-              <li>Reduced manual admin steps</li>
-            </ul>
-          </article>
-
-          <article class="card case-card">
-            <div class="case-tags">
-              <span class="tag">Acuity</span>
-              <span class="tag">HoneyBook</span>
-              <span class="tag">Onboarding</span>
-            </div>
-            <h3>Client Onboarding Workflow</h3>
-            <p>Example of an onboarding system that moves a new client from inquiry to booking, intake, organized records, and internal action steps.</p>
-            <div class="sample-shot onboarding">
-              <div class="ui-line long"></div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-line med"></div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-            </div>
-            <ul class="bullet-list">
-              <li>Automated scheduling and intake handling</li>
-              <li>Cleaner backend organization</li>
-              <li>Smoother client experience</li>
-            </ul>
-          </article>
-
-          <article class="card case-card">
-            <div class="case-tags">
-              <span class="tag">Scheduling</span>
-              <span class="tag">QA</span>
-              <span class="tag">Content Ops</span>
-            </div>
-            <h3>Content Operations Workflow</h3>
-            <p>Example of the kind of content backend I can support for planning, post scheduling, quality checks, reporting, and team coordination.</p>
-            <div class="sample-shot content">
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-line long"></div>
-              <div class="ui-line med"></div>
-            </div>
-            <ul class="bullet-list">
-              <li>Scheduled publishing workflow support</li>
-              <li>Asset preparation and organization</li>
-              <li>Reporting and quality checks</li>
-            </ul>
+            <p>Focus: systems thinking and process improvement.</p>
           </article>
         </div>
       </div>
@@ -890,140 +731,46 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Experience</div>
-          <h2>Professional experience that supports the services I offer</h2>
-          <p>These roles show the range of systems, tools, and support functions I’ve handled across automation, executive assistance, and social media operations.</p>
+          <h2>A layout that highlights your background with clarity</h2>
+          <p>Experience entries are presented in a clean timeline so visitors can quickly understand your skills, roles, and work history.</p>
         </div>
-
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-date">May 2024 – Present</div>
+            <div class="timeline-date">Recent Role</div>
             <div>
-              <h3>Executive Virtual Assistant / Automation Specialist — HFSCO</h3>
-              <p>Designed CRM automation using Acuity, HoneyBook, and Zapier while also supporting day-to-day executive operations.</p>
+              <h3>Executive Virtual Assistant / Automation Specialist</h3>
+              <p>Built automation workflows and supported executive operations through booking systems, CRM tools, scheduling, and admin workflows.</p>
               <ul>
-                <li>Email and calendar management</li>
-                <li>Customer service and appointment setting</li>
-                <li>Research, data entry, bookkeeping, and diary planning</li>
-                <li>Graphic design and content calendar management</li>
+                <li>Automation setup and workflow support</li>
+                <li>Calendar and inbox coordination</li>
+                <li>Research, reporting, and organization</li>
               </ul>
             </div>
           </div>
-
           <div class="timeline-item">
-            <div class="timeline-date">February 2026 · Project-Based</div>
+            <div class="timeline-date">Project-Based Work</div>
             <div>
-              <h3>CRM Automation Specialist — Fusion Advisors</h3>
-              <p>Built end-to-end HubSpot and Zapier workflows for sales pipeline management and onboarding automation.</p>
+              <h3>CRM Automation Specialist</h3>
+              <p>Created end-to-end CRM processes for client onboarding, pipeline management, follow-ups, and internal handoff systems.</p>
               <ul>
-                <li>Deal stage progression and follow-up task creation</li>
-                <li>Lead grading automation</li>
-                <li>Contact, company, and deal creation from bookings</li>
-                <li>Revenue tracking dashboards and task assignments</li>
+                <li>Lead qualification and task automation</li>
+                <li>Dashboard and revenue tracking concepts</li>
+                <li>Backend process improvement</li>
               </ul>
             </div>
           </div>
-
           <div class="timeline-item">
-            <div class="timeline-date">Nov 2025 – Jan 2026 / Apr 2025 – Oct 2025</div>
+            <div class="timeline-date">Support & Content Ops</div>
             <div>
-              <h3>Boost Assistant & Social Media Quality Auditor — RSF Agency</h3>
-              <p>Supported boosting schedules, content preparation, QA, reporting, and social media operations.</p>
+              <h3>Content Operations and Quality Support</h3>
+              <p>Handled scheduling, quality checks, content coordination, and backend support in roles that required consistency and detail.</p>
               <ul>
-                <li>Prepared captions, images, templates, and tracking links</li>
-                <li>Confirmed scheduling setup</li>
-                <li>Supported platform management and analytics</li>
-                <li>Worked with content creation and collaboration tasks</li>
+                <li>Content scheduling and QA</li>
+                <li>Asset organization and reporting</li>
+                <li>Cross-team coordination</li>
               </ul>
             </div>
           </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 2023 – Jan 2024</div>
-            <div>
-              <h3>Executive Virtual Assistant — Harness.io</h3>
-              <p>Supported meetings, reminders, executive coordination, presentations, travel arrangements, and administrative work.</p>
-              <ul>
-                <li>Scheduling and availability coordination</li>
-                <li>Hotel and travel support</li>
-                <li>Meeting minutes and administrative assistance</li>
-                <li>Presentation creation and optimization</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">Jan 2021 – Apr 2023 / Apr 2021 – Apr 2022</div>
-            <div>
-              <h3>Executive VA & Social Media Management — HFSCO / Kidzillafun.mtl</h3>
-              <p>Handled email support, calendar management, admin work, bookkeeping, social media posting, content planning, and website support.</p>
-              <ul>
-                <li>Website creation and visual support</li>
-                <li>Content calendar management</li>
-                <li>Bookkeeping, research, and admin task support</li>
-                <li>Graphic design and data organization</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Sample Task Previews</div>
-          <h2>The kinds of outputs I can create inside your business</h2>
-          <p>These portfolio-style previews help clients quickly understand the type of work I can support.</p>
-        </div>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Executive Dashboard & Task Tracking</h3>
-            <div class="sample-shot exec">
-              <div class="ui-line long"></div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-line med"></div>
-              <div class="ui-line small"></div>
-            </div>
-            <p>Useful for organizing priorities, reminders, meeting tasks, and daily executive support workflows.</p>
-          </article>
-
-          <article class="card">
-            <h3>Reports & Revenue Tracking Layout</h3>
-            <div class="sample-shot reports">
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-line long"></div>
-              <div class="ui-line long"></div>
-              <div class="ui-line med"></div>
-            </div>
-            <p>Useful for visualizing workflow status, performance snapshots, and revenue-related tracking support.</p>
-          </article>
-
-          <article class="card">
-            <h3>Content Calendar & Asset View</h3>
-            <div class="sample-shot design">
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-row">
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-              <div class="ui-line med"></div>
-            </div>
-            <p>Useful for clients who want help with planning posts, organizing assets, and maintaining consistent publishing systems.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -1031,22 +778,19 @@
     <section id="tools" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">My Automation Toolbox</div>
-          <h2>Tools and platforms I work with</h2>
-          <p>I use no-code and business operations tools that help automate, organize, and support business workflows.</p>
+          <div class="kicker">Tech Stack</div>
+          <h2>Tools presented in a modern developer-style stack section</h2>
+          <p>Use this area to show platforms, frameworks, automation tools, and workflow systems in a way that looks clean and current.</p>
         </div>
-
         <div class="tools-grid">
-          <div class="tool-tile">Zapier<small>workflow automation</small></div>
-          <div class="tool-tile">HubSpot<small>CRM and pipeline support</small></div>
-          <div class="tool-tile">HoneyBook<small>client workflow support</small></div>
-          <div class="tool-tile">Acuity<small>booking automation</small></div>
-          <div class="tool-tile">GoHighLevel<small>business systems</small></div>
-          <div class="tool-tile">n8n<small>automation workflows</small></div>
-          <div class="tool-tile">ClickUp<small>task management</small></div>
-          <div class="tool-tile">Trello<small>project organization</small></div>
-          <div class="tool-tile">Asana<small>operations support</small></div>
-          <div class="tool-tile">Slack<small>team coordination</small></div>
+          <div class="tool">HTML / CSS<small>responsive interfaces</small></div>
+          <div class="tool">JavaScript<small>interactive web behavior</small></div>
+          <div class="tool">React<small>component-based UI</small></div>
+          <div class="tool">GitHub<small>version control</small></div>
+          <div class="tool">Vercel<small>deployment workflow</small></div>
+          <div class="tool">Zapier<small>automation systems</small></div>
+          <div class="tool">HubSpot<small>CRM workflows</small></div>
+          <div class="tool">Figma<small>interface planning</small></div>
         </div>
       </div>
     </section>
@@ -1054,13 +798,13 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="contact-box">
-          <div class="kicker" style="color:#ffe48d;">Let’s Work Together</div>
-          <h2 style="margin:0 0 12px; font-family:'Poppins',sans-serif;">Need help with automation, executive support, or operations?</h2>
-          <p>I’m available to support businesses that need reliable systems, organized workflows, and dependable backend help.</p>
+          <div class="kicker" style="color:#c7d2fe;">Contact</div>
+          <h2 style="margin:0 0 12px; font-family:'Space Grotesk',sans-serif;">Let’s build something clean, modern, and impressive.</h2>
+          <p>This final section is designed to convert visitors into inquiries with a clear message and a professional call to action.</p>
           <div class="contact-list">
-            <div class="contact-item">📧 Email: kathgalemariano@gmail.com</div>
-            <div class="contact-item">📱 Mobile / WhatsApp: +63 976 147 2624</div>
-            <div class="contact-item">💼 LinkedIn: linkedin.com/in/kathryn-gale-mariano-b388ba18b</div>
+            <div class="contact-item">📧 kathgalemariano@gmail.com</div>
+            <div class="contact-item">💼 linkedin.com/in/kathryn-gale-mariano-b388ba18b</div>
+            <div class="contact-item">📅 calendly.com/kathgalemariano/discoverycall</div>
           </div>
         </div>
       </div>
@@ -1068,7 +812,28 @@
   </main>
 
   <footer class="footer">
-    <div class="container">Built as a colorful, client-focused portfolio for Kathryn Gale Mariano.</div>
+    <div class="container">Modern developer portfolio concept with deep colors, responsive layout, and light/dark mode.</div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('portfolio-theme');
+
+    if (savedTheme === 'light') {
+      body.classList.remove('dark');
+      toggle.textContent = '🌙';
+    } else {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
